@@ -62,15 +62,19 @@ hr {
 .locations-list {
   list-style-type: none;
   padding-left: 20px; 
+  padding-right: 20px; 
 }
 .info-window {
   display: flex;
   flex-direction: row;
+  max-width: 80vw;
 }
 
+
+
 .marker-image img {
-  width: 200px;
-  height: 200px;
+  width: 40vw;
+  height: 40vw;
   object-fit: cover;
 }
 
@@ -89,6 +93,21 @@ hr {
 .marker-source {
   font-size: 10px;
   color: rgb(139, 139, 139);
+}
+
+@media screen and (max-width: 600px) {
+  .info-window {
+    flex-direction: column;
+  }
+
+  .marker-title {
+    margin-left: 0px;
+  }
+
+  .marker-title p,
+  .marker-source {
+    display: none;
+  }
 }
 /*
 * SideBar nav - burger menu icon
