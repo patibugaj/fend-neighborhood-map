@@ -1,0 +1,79 @@
+[
+    {
+        "key": "cadiz",
+        "title": "Cadiz", 
+        "info": "Cadiz is a city and port in southwestern Spain. It is the capital of the Province of Cadiz, one of eight which make up the autonomous community of Andalusia.",
+        "source": "https://simple.wikipedia.org/wiki/Cadiz",
+        "location": {"lat": 36.5164503, "lng": -6.3174868},
+        "url": "https://v.wpimg.pl/NDA1NTI0Jy1ufmFifQQ2cHABYT1nRz5qMV1hNWZWYS4xVCl7egN6dHUedmR5HSUlJUglJ2RTLzAkVTw1ZF47KzdQYzImRCEoKFARYXgEd31wA3oLLx4taiYfYD45VSk="
+    },
+    {
+        "key": "vejer-de-la-frontera",
+        "title": "Vejer de la Frontera", 
+        "info": "The town was awarded the National Prize for the Beautification of Andalusian Towns. Its Moorish heritage is evident in architecture. It is perched on top of a beautiful hill overlooking the River Barbate.",
+        "source": "http://www.cadizturismo.com/destinos/provincias/cadiz/municipios/vejer-de-la-frontera/?set_language=en",
+        "location": {"lat": 36.2516806, "lng": -5.974266},
+        "url":"https://blog.fuertehoteles.com/wp-content/uploads/2017/05/vejer-de-la-frontera.jpg"
+    },
+    {
+        "key": "playa-de-los-alemanes",
+        "title": "German Beach", 
+        "info": "Also called 'Cabo de Plata beach' and 'Aguaenmedio beach', is a small beach located in the municipality of Tarifa. Its name is due to the accommodation of Nazi leaders after the Second World War",
+        "source": "https://es.wikipedia.org/wiki/Playa_de_los_Alemanes",
+        "location": {"lat": 36.0956699, "lng": -5.8163954},
+        "url": "https://playascalas.com/wp-content/2015/07/Playa-de-los-Alemanes1-404x233.jpg"
+    },
+    {
+        "key": "tarifa",
+        "title": "Tarifa", 
+        "info": "Tarifa is located at the southern most point in Europe. It is so close to Africa, just 14 kilometres, and affords spectacular views to the Rif Mountains.",
+        "source": "https://www.spain-holiday.com/Tarifa",
+        "location": {"lat": 36.0144722, "lng": -5.6134135},
+        "url": "https://blog.fuertehoteles.com/wp-content/uploads/2018/04/tarifa-beach-surf.jpg"},
+    {
+        "key": "gibraltar",
+        "title": "Gibraltar", 
+        "info": "Gibraltar is an Overseas Territory of the United Kingdom. This means it shares the British King or Queen and has the protection of the British Armed Forces.",
+        "source": "https://simple.wikipedia.org/wiki/Gibraltar",
+        "location": {"lat": 36.1295735, "lng": -5.3883196},
+        "url": "http://roomsevilla.com/media/blog/images/Gibraltar.jpg"},
+    {
+        "key": "zoo-de-castellar",
+        "title": "Zoo de Castellar", 
+        "info": "The ‘zoo’ de Castellar is not your typical zoo. For years it remained relatively unknown and unvisited. Word of mouth ensuring its survival. The zoo is very open and interactive; children are encouraged to touch and meet the animals.",
+        "source": "https://www.spain-holiday.com/Cadiz-city/articles/zoo-de-castellar-a-different-kind-of-zoo",
+        "location": {"lat": 36.3403375, "lng": -5.6859387},
+        "url": "https://www.sunsetbeachclub.com/blog/wp-content/uploads/2014/02/Zoo-de-Castellar-Simba.png"},
+    {
+        "key": "ronda",
+        "title": "Ronda", 
+        "info": "Ronda is a brawny town with a dramatic history littered with outlaws, bandits, guerrilla warriors and rebels. Its spectacular location atop El Tajo gorge and its status as the largest of Andalucia’s white towns have made it hugely popular with tourists.",
+        "source": "https://www.lonelyplanet.com/spain/andalucia/ronda",
+        "location": {"lat": 36.740668, "lng": -5.1756688},
+        "url": "https://notjustatourist.com/wp-content/uploads/2015/09/Puente-Ronda-247x296.jpg"
+    },
+    {
+        "key": "setenil-de-las-bodegas",
+        "title": "Setenil de las Bodegas", 
+        "info": "A town (pueblo) and municipality in the province of Cadiz, Spain, famous for its dwellings built into rock overhangs above the Río Guadalporcún.",
+        "source": "https://en.wikipedia.org/wiki/Setenil_de_las_Bodegas",
+        "location": {"lat": 36.8629462, "lng": -5.1855144},
+        "url": "http://www.ganasdeviajar.com/wp-content/uploads/PIEDRA-SETENIL-DE-LAS-BODEGAS-CADIZ.jpg"
+    },
+    {
+        "key": "sevilla",
+        "title": "Sevilla", 
+        "info": "The city of Seville is famous worldwide for its culture, monuments, traditions and artistic heritage. This is the birthplace of Flamenco. But Seville is also the neuralgic centre of the South of Spain.",
+        "source": "http://www.tourspain.org/sevilla/",
+        "location": {"lat": 37.3754865, "lng": -6.0250989},
+        "url": "https://www.kras.nl/wsmedia/afbeelding/007/065/011.500x375/sevilla-spanje-september-2017-603319100_sevilla_spanje.jpg"
+    },
+    {
+        "key": "jerez-de-la-frontera",
+        "title": "Jerez de la Frontera", 
+        "info": "It is famous as the home of the wine called sherry, whose name comes from the city's old Arabic name. The city is well known for breeding and training the world-famous Andalusian horses. Flamenco dance is a popular cultural feature of the city.",
+        "source": "https://simple.wikipedia.org/wiki/Jerez_de_la_Frontera",
+        "location": {"lat": 36.6876694, "lng": -6.158005},
+        "url": "http://2.bp.blogspot.com/-vCRl2h0nw0E/UGQscq2m3EI/AAAAAAAAAcg/uBTXVyWmYqs/s1600/jerez-01.jpg"
+    }
+]

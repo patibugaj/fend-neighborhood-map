@@ -1,0 +1,154 @@
+
+html,
+body,
+#root {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  height: 100%;
+  position: relative;
+}
+input {
+  font-size: 12px;
+}
+.top-nav {
+  position: relative;
+  top: 0;
+  padding: 12px 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #525454;
+}
+h1 {
+  color: #ececec;
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+}
+#hide-listings,
+#show-listings {
+  width: 48%;
+}
+hr {
+  background: #D0D7D9;
+  height: 1px;
+  margin: 20px 0 20px 0;
+  border: none;
+}
+#map {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+.options-box {
+  background: #fff;
+  /* border: 1px solid #999;
+  border-radius: 3px; */
+  height: 100%;
+  line-height: 35px;
+  /* padding: 10px 10px 30px 10px; */
+  text-align: left;
+  width: 300px;
+}
+#pano {
+  width: 200px;
+  height: 200px;
+}
+.text {
+  font-size: 12px;
+}
+.locations-list {
+  list-style-type: none;
+  padding-left: 20px; 
+}
+.info-window {
+  display: flex;
+  flex-direction: row;
+}
+
+.marker-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.marker-title {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+
+.marker-title p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.marker-source {
+  font-size: 10px;
+  color: rgb(139, 139, 139);
+}
+/*
+* SideBar nav - burger menu icon
+*/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 10px;
+  top: 10px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #ececec;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  font-size: 1.15em;
+  overflow: hidden;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+.bm-item input {    
+  width: calc(100% - 38px);
+  padding: 10px 19px;
+  font-size: 20px;
+  border: none;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
