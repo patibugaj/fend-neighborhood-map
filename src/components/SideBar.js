@@ -60,6 +60,14 @@ class SideBar extends Component {
         this.state.filteredMarkers.map(filteredMarker =>
             filteredMarker.id === marker.id && marker.setVisible(true)
         )
+    }    
+
+    clickedLocationInfoWindow = (id) => {
+        const clickedMarker = this.props.markers.find(element =>
+            element.id === id
+        )
+        window.google.maps.event.trigger(clickedMarker, 'click');
+        clickedMarker.setOptions({opacity: 0.5})
     }
 
     render () {
@@ -83,6 +91,10 @@ class SideBar extends Component {
 								role="button"
 								className="location-item"
                                 key={location.key}
+								onClick={() => 
+									this.clickedLocationInfoWindow(location.key)}
+								onKeyPress={() => 
+									this.clickedLocationInfoWindow(location.key)}
 							>
 								{location.title}
 							</li>

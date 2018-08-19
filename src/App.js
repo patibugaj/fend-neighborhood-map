@@ -7,7 +7,10 @@ class App extends Component {
   state = {
     locations: locationsData,    
     map: '',
-    markers: []
+    markers: [],
+    infoWindowIsOpen: false,
+    currentMarker: {},
+    largeInfowindow: {}
   }
 
   componentDidMount() {
@@ -28,13 +31,15 @@ class App extends Component {
       },
     });
 
-    this.setState({map})
     
     const largeInfowindow = new window.google.maps.InfoWindow();
+
+    this.setState({map, largeInfowindow})
 
     for (let i = 0; i < locations.length; i++) {
       
       let position = locations[i].location;
+      let key = locations[i].key;
       let title = locations[i].title;
       let info = locations[i].info;
       let source = locations[i].source;
@@ -42,12 +47,13 @@ class App extends Component {
       
       let marker = new window.google.maps.Marker({
         position: position,
+        key: key,
         title: title,
         info: info,
         source: source,
         image: image,
         animation: window.google.maps.Animation.DROP,
-        id: i
+        id: key
       });
       
       markers.push(marker);
@@ -63,6 +69,7 @@ class App extends Component {
       marker.addListener('mouseout', function() {
         marker.setOptions({opacity: 1})
       });
+
     }
     
     this.showListings();
@@ -73,12 +80,24 @@ class App extends Component {
   populateInfoWindow = (marker, infowindow) => {
     const { map } = this.state;
     
+    this.setState({
+      infoWindowIsOpen: true,
+      currentMarker: marker
+    });
+
     if (infowindow.marker !== marker) {
       infowindow.marker = marker;
+      let self = this
       infowindow.addListener('closeclick',function(){
-        infowindow.setMarker = null;
-      });
+        infowindow.setMarker = null; 
+        infowindow.marker.setOptions({opacity: 1}) 
+        self.setState({
+          infoWindowIsOpen: false,
+          currentMarker: {}
+        });    
+      });        
       
+
       let streetViewService = new window.google.maps.StreetViewService();
       const radius = 50;
       
@@ -129,7 +148,6 @@ class App extends Component {
           </div>`);
         }
       }
-      
       streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
       
       infowindow.open(map, marker);
@@ -157,6 +175,8 @@ class App extends Component {
         <SideBar 
           locations={this.state.locations}
           markers={this.state.markers}
+          populateInfoWindow = {this.populateInfoWindow}
+          largeInfowindow={this.state.largeInfowindow}
         />
         <div id="map" role="application"></div>
       </div>

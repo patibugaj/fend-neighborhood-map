@@ -1,4 +1,3 @@
-
 html,
 body,
 #root {
@@ -64,6 +63,9 @@ hr {
   padding-left: 20px; 
   padding-right: 20px; 
 }
+.location-item {
+  cursor: pointer;
+}
 .info-window {
   display: flex;
   flex-direction: row;
@@ -73,8 +75,8 @@ hr {
 
 
 .marker-image img {
-  width: 40vw;
-  height: 40vw;
+  width: 20vw;
+  height: 20vw;
   object-fit: cover;
 }
 
