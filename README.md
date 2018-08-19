@@ -1,6 +1,6 @@
 # FEND NEIGHBORHOOD MAP (REACT)
 
-Project 8 (final) of the [Front-End Web Developer with Udacity](https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001).
+Project 8 (final) of the [Front-End Web Developer with Udacity](https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001) with the usage of the Google Maps API.
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@ Project 8 (final) of the [Front-End Web Developer with Udacity](https://eu.udaci
 
 
 ## Instruction
-- The application shows 'must visit' places of **Andalucia** region in Spain
+- The application shows map of 'must visit' places of **Andalucia** region in Spain
 - Under the **hamburger menu** (top left corner) is hidden a list of places with the filter input
 - You can filter places by putting desired place title in the  filter input above the locations list
 - The list of places will be limited accordingly to inputed words
