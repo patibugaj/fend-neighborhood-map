@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetchJsonp from 'fetch-jsonp';
 
 import SideBar from './components/SideBar.js';
 import * as locationsData from './locations.json';
@@ -10,11 +11,17 @@ class App extends Component {
     markers: [],
     infoWindowIsOpen: false,
     currentMarker: {},
-    largeInfowindow: {}
+    largeInfowindow: {},
+    placeInfo: ''
+  }
+
+  gm_authFailure(){
+    window.alert("Google Maps error!")
   }
 
   componentDidMount() {
     window.initMap = this.initMap;
+    window.gm_authFailure = this.gm_authFailure;
     loadJS('https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyB7x8v_6g7G9ZtgU0bvVY0cZ_pjcA2i81Q&callback=initMap');
   }
 
@@ -101,7 +108,11 @@ class App extends Component {
       let streetViewService = new window.google.maps.StreetViewService();
       const radius = 50;
       
+      this.getInfos(marker);
+//console.log(this.state.placeInfo)
       let getStreetView = (data, status) => {
+        let infoContent
+        this.state.placeInfo ? infoContent = `${this.state.placeInfo.slice(0,180)}...` : infoContent = marker.info
         if (status === window.google.maps.StreetViewStatus.OK) {
           let nearStreetViewLocation = data.location.latLng;
           let heading = window.google.maps.geometry.spherical.computeHeading(
@@ -109,10 +120,9 @@ class App extends Component {
             infowindow.setContent(`
             <div class="info-window">
               <div id="pano"></div>
-              <div class="marker-title">
+              <div class="info-window-title">
                 <h3>${ marker.title }</h3>
-                <p>${marker.info}</p>
-                <p marker-source><a href="${marker.source}">Source</a></p>
+                <p class="info-window-content">${infoContent} <a href="${marker.source}">More</a></p>
               </div>
             </div>`);
             let panoramaOptions = {
@@ -127,23 +137,21 @@ class App extends Component {
         } else if (marker.image) {
           infowindow.setContent(`
           <div class="info-window">
-            <div class="marker-image">
-              <img src="${ marker.image }">
+            <div class="info-window-image">
+              <img src="${ marker.image }" alt="${ marker.title }">
             </div>
-            <div class="marker-title">
+            <div class="info-window-title">
               <h3>${ marker.title }</h3>
-              <p>${marker.info}</p>
-              <p marker-source><a href="${marker.source}">Source</a></p>
+              <p class="info-window-content">${infoContent} <a href="${marker.source}">More</a></p>
             </div>
           </div>`);
         } else {
           infowindow.setContent(`
           <div class="info-window">
             <div>No Image Found</div>
-            <div class="marker-title">
+            <div class="info-window-title">
               <h3>${ marker.title }</h3>
-              <p>${marker.info}</p>
-              <p marker-source><a href="${marker.source}">Source</a></p>
+              <p class="info-window-content">${infoContent} <a href="${marker.source}">More</a></p>
             </div>
           </div>`);
         }
@@ -153,7 +161,37 @@ class App extends Component {
       infowindow.open(map, marker);
     }
   }
-  
+
+  getInfos = (marker) => {
+    let self = this;
+    /* Get the good URL */
+    let location = marker.title;
+    let srcUrl = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' +
+    location;
+    srcUrl = srcUrl.replace(/ /g, '%20');
+    
+    /* Fetch from Wikipedia API */
+    fetchJsonp(srcUrl)
+      .then(function(response) {
+        return response.json();
+      }).then(function (data) {
+        /* Get the content of the response */
+        let pages = data.query.pages;
+        let pageId = Object.keys(data.query.pages)[0];
+        let pageContent = pages[pageId].extract;
+
+        /* Get the content into the state */
+        self.setState({
+          placeInfo: pageContent
+        });
+      }).catch(function (error) {
+        let pageError = 'Parsing failed ' + error;
+        self.setState({
+          placeInfo: pageError
+        });
+      })
+  }
+
   showListings = () => {
     const { markers, map } = this.state;
     var bounds = new window.google.maps.LatLngBounds();

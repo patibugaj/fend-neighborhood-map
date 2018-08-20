@@ -72,28 +72,30 @@ hr {
   max-width: 80vw;
 }
 
-
-
-.marker-image img {
+.info-window-image img {
   width: 20vw;
   height: 20vw;
   object-fit: cover;
 }
 
-.marker-title {
+.info-window-title {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
   max-width: 200px;
 }
 
-.marker-title p {
+.info-window-title h3 {
+  margin-top: 0;
+}
+
+.info-window-title p {
   margin: 0;
   line-height: 1.5;
 }
 
-.marker-source {
-  font-size: 10px;
+.info-window-source {
+  font-size: 12px;
   color: rgb(139, 139, 139);
 }
 
@@ -102,12 +104,12 @@ hr {
     flex-direction: column;
   }
 
-  .marker-title {
+  .info-window-title {
     margin-left: 0px;
   }
 
-  .marker-title p,
-  .marker-source {
+  .info-window-title p,
+  .info-window-source {
     display: none;
   }
 }

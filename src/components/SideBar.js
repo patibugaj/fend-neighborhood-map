@@ -13,7 +13,13 @@ class SideBar extends Component {
 	componentDidMount() {
 		this.setState({
 			filteredMarkers: this.props.markers
-		});
+        });
+        
+        const burgerMenu = document.querySelector('.bm-burger-button')
+        burgerMenu.setAttribute('role', 'button')
+        const burgerMenuButton = burgerMenu.querySelector('button')
+        burgerMenu.tabIndex=1
+        burgerMenuButton.tabIndex=1
 	}
 
     updateQuery = (searchTerm) => {
@@ -70,9 +76,11 @@ class SideBar extends Component {
         clickedMarker.setOptions({opacity: 0.5})
     }
 
+
+
     render () {
         return (
-          <Menu className="options-box">
+          <Menu className="options-box" tabIndex={1}>
                 <div className="search-locations-input">
                 <input 
                     type="text" 
@@ -87,7 +95,7 @@ class SideBar extends Component {
 					{
 						this.state.filteredLocationsList.map(location => (
 							<li
-								tabIndex={0}
+								tabIndex={2}
 								role="button"
 								className="location-item"
                                 key={location.key}
